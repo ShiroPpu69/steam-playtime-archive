@@ -2,7 +2,28 @@
   "name": "steam-playtime-archive",
   "version": "0.1.0",
   "private": true,
-  "description": "PLAYTIME ARCHIVE - A private dossier of your Steam library and accumulated hours.",
+  "description": "A cinematic Steam playtime archive for games, hours, history, SQLite snapshots, exports, and Cloudflare deployment.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShiroPpu69/steam-playtime-archive.git"
+  },
+  "homepage": "https://github.com/ShiroPpu69/steam-playtime-archive#readme",
+  "bugs": {
+    "url": "https://github.com/ShiroPpu69/steam-playtime-archive/issues"
+  },
+  "keywords": [
+    "steam",
+    "steam-api",
+    "playtime",
+    "archive",
+    "react",
+    "vite",
+    "typescript",
+    "sqlite",
+    "cloudflare-workers",
+    "d1",
+    "data-visualization"
+  ],
   "workspaces": [
     "client",
     "server"
