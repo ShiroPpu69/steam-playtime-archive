@@ -1,0 +1,28 @@
+{
+  "name": "steam-playtime-archive",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PLAYTIME ARCHIVE - A private dossier of your Steam library and accumulated hours.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm --workspace client run dev",
+    "dev:server": "npm --workspace server run dev",
+    "build": "npm --workspace server run build && npm --workspace client run build",
+    "server": "npm --workspace server run start",
+    "sync": "npm --workspace server run sync",
+    "cf:build": "npm run build",
+    "cf:deploy": "wrangler deploy",
+    "cf:d1:create": "wrangler d1 create steam-playtime-archive-db",
+    "cf:d1:migrate": "wrangler d1 execute steam-playtime-archive-db --remote --file=cloudflare/schema.sql",
+    "lint": "npm --workspace client run lint && npm --workspace server run lint",
+    "typecheck": "npm --workspace server run typecheck && npm --workspace client run typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "wrangler": "^4.0.0"
+  }
+}

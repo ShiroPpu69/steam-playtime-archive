@@ -1,0 +1,15 @@
+services:
+  steam-playtime-archive:
+    build: .
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    environment:
+      CLIENT_ORIGIN: http://localhost:3001
+      DATABASE_PATH: /app/data/archive.sqlite
+    volumes:
+      - archive-data:/app/data
+
+volumes:
+  archive-data:

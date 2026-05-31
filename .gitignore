@@ -1,0 +1,14 @@
+node_modules/
+dist/
+**/dist/
+data/
+**/data/
+wrangler.local.toml
+.env
+.env.local
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+npm-debug.log*
+.DS_Store
+pet-runs/

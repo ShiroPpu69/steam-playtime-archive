@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+
+:root {
+  --bg: #080705;
+  --surface-1: #120f0b;
+  --surface-2: #1a150f;
+  --surface-3: #241e15;
+  --paper: #efe3cc;
+  --paper-soft: #e8ddc8;
+  --paper-muted: #9b907e;
+  --border-soft: rgba(194, 166, 109, 0.18);
+  --border-strong: rgba(194, 166, 109, 0.34);
+  --accent: #c2a66d;
+  --accent-dim: #8d7442;
+  --danger: #9e4a3f;
+  --success: #7d8b6f;
+  --shadow-card: 0 18px 50px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 238, 200, 0.045), inset 0 -1px 0 rgba(0, 0, 0, 0.55);
+  --shadow-card-hover: 0 26px 70px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 238, 200, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--paper-soft);
+  font-family: "IBM Plex Sans", Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(194, 166, 109, 0.09), transparent 34rem),
+    radial-gradient(circle at 0% 45%, rgba(125, 139, 111, 0.045), transparent 28rem),
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 36rem, rgba(0, 0, 0, 0.34) 78rem),
+    linear-gradient(135deg, #080705 0%, #0d0b08 48%, #15110c 100%);
+  background-attachment: fixed;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  opacity: 0.095;
+  background-image:
+    radial-gradient(circle at 25% 15%, rgba(255, 238, 200, 0.32) 0 1px, transparent 1px),
+    radial-gradient(circle at 74% 62%, rgba(255, 238, 200, 0.22) 0 1px, transparent 1px);
+  background-size: 9px 9px, 13px 13px;
+  animation: grainDrift 8s steps(4) infinite;
+}
+
+body::after {
+  background: radial-gradient(circle at center, transparent 0 45%, rgba(0, 0, 0, 0.38) 100%);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: var(--accent);
+}
+
+@keyframes grainDrift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-1px, 1px); }
+  50% { transform: translate(1px, -1px); }
+  75% { transform: translate(1px, 1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}
